@@ -1,0 +1,412 @@
+/* Stilet BAZË dhe Variablat */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #fdfaf6; /* bezhë shumë e lehtë */
+}
+
+/* Krijimi i Variablave të Ngjyrave për Përdorim të Lehtë */
+:root {
+    --color-primary: #cc3b3b; /* E kuqja kryesore (p.sh., header, tituj) */
+    --color-secondary: #f2c94c; /* E verdha/ari (p.sh., buttons, thekse) */
+    --color-text: #222; /* Teksti i zi/errët */
+}
+
+/* --- HEADER DHE NAVIGACIONI --- */
+header {
+    background-color: var(--color-primary); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.titulli {
+    font-size: 3rem;
+    color: #ffffff;
+    font-family: 'layfair Display', Georgia, serifP;
+    letter-spacing: 1px;
+    background: transparent;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    background: none;
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff9f3;
+    font-weight: 500;
+    padding: 10px 18px;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    background: none;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #f5e5b8;
+    color: #a82f2f;
+    box-shadow: 0px 3px 10px rgba(168, 47, 47, 0.25);
+}
+
+/* --- HERO SECTION (ORIGJINAL) --- */
+.photo {
+    position: relative;
+    width: 100%;
+    /* Lartësia gjithashtu do të jetë fluide */
+    height: clamp(250px, 40vw, 500px);
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+}
+
+.photo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#okk {
+    position: absolute;
+    top: 40%; /* NDRYSHIMI: Pozicionuar lart */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    
+    /* TIPOGRAFIA FLUIDE: Min: 1.8rem, Preferuar: 2.5vw, Max: 3.5rem */
+    font-size: clamp(1.8rem, 1rem + 2.5vw, 3.5rem);
+    
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    z-index: 10;
+    background: none;
+    width: 90%; /* Për të shmangur daljen jashtë ekranit */
+}
+
+#okk1 {
+    position: absolute;
+    top: 60%; /* NDRYSHIMI: Pozicionuar poshtë (Hendek 20%) */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fdfaf6;
+    
+    /* TIPOGRAFIA FLUIDE: Min: 0.9rem, Preferuar: 1.2vw, Max: 1.5rem */
+    font-size: clamp(0.9rem, 0.5rem + 1vw, 1.5rem);
+
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    z-index: 10;
+    background:none;
+    width: 85%; /* Për të shmangur daljen jashtë ekranit */
+}
+
+/* --- BUTONI --- */
+.buton {
+    background-color: var(--color-primary); 
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    outline: none;
+}
+
+.buton:hover {
+    background-color: #a82f2f;
+    color: var(--color-secondary); 
+    transform: translateY(-3px);
+}
+
+/* --- SEKSIONET KRYESORE --- */
+section {
+    padding: 50px 0;
+    display: block;
+} 
+
+.explore-section {
+    padding: 60px 5%;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary); 
+    margin-bottom: 10px;
+    background: none;
+    text-align: center;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #555555;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    background: none;
+}
+
+/* KONTEINERI DY KOLUMNASH */
+.collection-grid {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* GALERIA E FOTOVE */
+.photo-gallery {
+    flex: 2;
+    min-width: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 2px solid var(--color-secondary); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.photo-gallery:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 10px 25px rgba(204, 59, 59, 0.12);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    aspect-ratio: 4/3;
+}
+
+/* STORY CARD */
+.story-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 2px solid var(--color-primary); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.story-card:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 10px 25px rgba(204, 59, 59, 0.12);
+}
+
+.story-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: none;
+}
+
+.story-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    background: none;
+}
+
+.story-card .text-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: none;
+}
+
+.story-card h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary); 
+    margin: 0;
+    background: none;
+}
+
+.story-card p {
+    font-size: 1rem;
+    color: #555555;
+    margin: 0;
+    background: none;
+}
+
+.story-link {
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    align-self: flex-start;
+    background: none;
+    color: var(--color-primary); 
+}
+
+.story-link:hover {
+    color: var(--color-secondary); 
+}
+
+
+/* --- FOOTER --- */
+.site-footer {
+    background-color: #222;
+    color: #f1efe8;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    width: 100%;
+    border-top: 1px solid #444;
+}
+
+.site-footer p {
+    background-color: transparent; 
+    color: #f1efe8;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+/* ------------------------------------------- */
+/* --- MEDIA QUERIES PËR RESPONSIVENESS (PASTRUAR) --- */
+/* ------------------------------------------- */
+
+/* TABLETË DHE EKRANE TË MËDHA MOBILE (Max Width 1024px) */
+@media (max-width: 1024px) {
+    /* HEADER (OK) */
+    header {
+        padding: 15px 25px;
+    }
+    .titulli {
+        font-size: 2.5rem;
+    }
+    nav {
+        gap: 15px;
+    }
+    nav a {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+    
+    /* SEKSIONET KRYESORE (OK) */
+    .explore-section {
+        padding: 50px 4%;
+    }
+    .collection-grid {
+        gap: 30px;
+    }
+    
+    /* * SHËNIM: Rregullat për #okk, #okk1, dhe lartësinë e .photo janë hequr 
+     * sepse tani ato kontrollohen automatikisht nga 'clamp()' në kodin bazë CSS.
+     */
+}
+
+
+/* EKRANE MOBILE (Max Width 768px) */
+@media (max-width: 768px) {
+    /* HEADER: Kalon në format kolonë (OK) */
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+        position: static; 
+    }
+    nav {
+        margin-top: 15px;
+        gap: 10px;
+        flex-wrap: wrap; 
+        justify-content: space-around;
+        width: 100%;
+    }
+    nav a {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    /* SEKSIONET: Kalon nga 2 kolona në 1 rresht (OK) */
+    .collection-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .photo-gallery,
+    .story-card {
+        min-width: 100%;
+    }
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+        gap: 10px;
+    }
+    .story-card h2 {
+        font-size: 1.5rem;
+    }
+    .story-img {
+        height: 300px; 
+    }
+}
+
+/* EKRANE SHUMË TË VOGLA MOBILE (Max Width 480px) */
+@media (max-width: 480px) {
+    /* SEKSIONET (OK) */
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-description {
+        font-size: 1rem;
+    }
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 8px;
+        gap: 8px;
+    }
+    .story-img {
+        height: 200px;
+    }
+    .story-card .text-content {
+        padding: 15px;
+    }
+    .buton {
+        font-size: 1.2rem;
+        padding: 10px 18px;
+    }
+}

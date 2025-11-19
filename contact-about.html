@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rreth Nesh dhe Kontakti | Veshjet Tradicionale Shqiptare</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    
+<header>
+    <h1 class="titulli">Veshjet Tradicionale</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="krahinat.html">Gra</a>
+        <a href="krahinatBurra.html">Burra</a>
+        <a href="contact-about.html">Rreth nesh</a>
+    </nav>
+</header>
+
+<main>
+    
+<section id="about-us" class="scroll-section">
+    <h1>Rreth Nesh</h1>
+    <div class="bo">
+        <p>Ne jemi një grup nxënësish të apasionuar pas kulturës dhe traditave shqiptare. Ky projekt u krijua nga dëshira jonë për të zbuluar dhe prezantuar bukurinë dhe pasurinë e veshjeve tradicionale që përfaqësojnë identitetin e ndryshëm të rajoneve të Shqipërisë.</p>
+        
+        <p>Veshjet tradicionale shqiptare nuk janë vetëm rroba; ato janë një histori e gjallë që tregon zakonet, mënyrën e jetesës dhe artin e njerëzve të një kohe të kaluar. Çdo pjesë e veshjes, nga ngjyrat dhe materialet deri te modelet dhe qëndisjet, ka kuptim të veçantë dhe simbolizon pjesë të kulturës dhe trashëgimisë sonë.</p>
+        
+        <p>Qëllimi ynë është të bëjmë të njohura këto thesarë kulturore, duke treguar jo vetëm pamjen e tyre të jashtme, por edhe historinë dhe domethënien që mbajnë. Përmes këtij projekti, duam të bëjmë një lidhje midis së kaluarës dhe së tashmes, duke frymëzuar njerëzit e rinj të vlerësojnë dhe ruajnë traditat tona.</p>
+        
+        <p>Shpresojmë që prezantimi ynë t’ju tregojë sa të pasura dhe të ndryshme janë veshjet tradicionale shqiptare, dhe t’ju shtyjë të njihni më shumë për kulturën dhe historinë tonë të bukur. Ky projekt është realizuar me përkushtim nga Alon Haliti, Aril Haliti, Yll Gashi, Olt Emini, Lina Salihu dhe Enuara Xhemaili, të gjithë duke kontribuar në mënyra të ndryshme për t’i dhënë jetë këtij projekti.</p>
+    </div>
+</section>
+
+<section id="contact-us" class="scroll-section">
+    <h1>Na Kontaktoni</h1>
+
+    <div class="contact-box">
+        <p>Na kontaktoni për më shumë informacion, pyetje apo sugjerime. Jemi gjithmonë të gatshëm t'ju ndihmojmë!</p>
+
+        <form action="https://formspree.io/f/xpwbpkbe" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+
+            <label for="name">Emri</label>
+            <input type="text" id="name" name="Emri" placeholder="Shkruaj emrin tuaj" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="Email" placeholder="Shkruaj email-in tuaj" required>
+
+            <label for="message">Mesazh</label>
+            <textarea id="message" name="Mesazh" placeholder="Shkruaj mesazhin tuaj" required></textarea>
+
+            <button type="submit">Dërgo</button>
+        </form>
+
+    </div>
+</section>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".scroll-section");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>

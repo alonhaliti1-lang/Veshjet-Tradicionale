@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veshjet Veriore të Grave</title>
+    
+    <link rel="stylesheet" href="HomePage.css"> 
+    <link rel="stylesheet" href="DizajnInformata.css">
+</head>
+<body>
+    
+<header>
+    <h1 class="titulli">Veshjet Tradicionale</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="krahinat.html">Gra</a>
+        <a href="krahinatBurra.html">Burra</a>
+        <a href="contact-about.html">Rreth nesh</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="info-section scroll-section">
+    <div class="info-grid">
+        <div class="info-foto">
+            <img src="img/VeshjeGraUlqin1.jpeg" alt="Veshja tradicionale e Gruas së Ulqinit">
+        </div>
+        <div class="info-tekst">
+            <h2>Veshja Tradicionale e Grave të Ulqinit</h2>
+            <p>Veshja tradicionale e grave të Ulqinit njihet për <strong>thjeshtësinë elegante, përdorimin e ngjyrës së bardhë si bazë, qëndismat delikate</strong> dhe ndikimet bregdetare. Lidhet ngushtë me kulturën e Anës së Malit dhe traditat e shqiptarëve pranë detit.</p>
+            <p>Stili është më i thjeshtë dhe më elegant, me qëndisma delikate dhe më të pakta, duke qenë më pak i rënduar krahasuar me veshjet malore.</p>
+            
+            <h3>Ngjyrat Karakteristike</h3>
+            <p>Ngjyrat kryesore janë: <strong>E bardhë (dominuese), E zezë, E kuqe dhe Blu e errët</strong>. Ngjyrat e lehta lidhen me traditat bregdetare dhe klimën e ngrohtë. Për raste festive shtohen detaje me <strong>fije të arta</strong>.</p>
+            
+            <blockquote>“Ngjyra e bardhë është më e përdorur se në shumë rajone shqiptare, dhe shamitë e bardha janë pjesë e pandashme e graves ulqinake, duke treguar pastërti dhe elegancë.”</blockquote>
+        </div>
+    </div>
+</section>
+
+<section class="detaje-section scroll-section">
+    <div class="detaje-container">
+        <h2>Elementët Kryesorë të Veshjes</h2>
+        
+        <h3>Elementet Qendrore</h3>
+        <ul>
+            <li><strong>Këmisha e Bardhë:</strong> Prej pambuku ose liri, me mëngë të gjera dhe një brez të vogël qëndisjeje në skajet. Është elementi kryesor i veshjes dhe zakonisht e gjatë.</li>
+            <li><strong>Jeleku (Xhokja):</strong> I shkurtër dhe me qëndisje të lehtë. Mund të jetë i zi, blu i errët ose i kuq. Për festa zbukurohet me <strong>gajtan të artë ose argjendi</strong>.</li>
+            <li><strong>Pështjellaku (Përparësja):</strong> Element shumë karakteristik. Zakonisht <strong>i bardhë ose i zi me motive të bardha</strong>, me qëndisma të thjeshta në të zezë, të kuqe ose blu.</li>
+        </ul>
+        
+        <h3>Pjesët Plotësuese dhe Aksesorët</h3>
+        <ul>
+            <li><strong>Brezi (Shoka):</strong> Vishet rreth belit. Gratë e reja përdorin breza <strong>shumëngjyrësh</strong>, ndërsa të martuarat breza më të thjeshtë dhe të errët.</li>
+            <li><strong>Fundi i Endur / Fustani i Poshtëm:</strong> Fund i endur me ngjyra të errëta (blu/zezë) me motive lineare të thjeshta.</li>
+            <li><strong>Mbulesa e Kokës:</strong> Shamia e bardhë, e vendosur mbi kokë ose supe, në festa mund të ketë qëndisma të vogla me fije ari.</li>
+            <li><strong>Stolitë Tradicionale:</strong> Të pakta por elegante (qafore me monedha të vjetra, unaza/byzylykë argjendi, vathë të lehtë). Nuset përdorin stoli më të rënda.</li>
+        </ul>
+
+        <h3>Veçoritë Dalluese të Veshjes së Ulqinit</h3>
+        <p>Veshja e Ulqinit dallohet për <strong>thjeshtësinë, qëndismat delikate</strong> dhe mbizotërimin e ngjyrës së bardhë. Ajo pasqyron lidhjen me detin dhe klimën e ngrohtë, duke favorizuar elegancën natyrale mbi ngarkesën e qëndisjes.</p>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <p>&copy; 2025 Projekt. Të gjitha të drejtat e rezervuara.</p>
+</footer>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Zgjedh të gjitha seksionet me klasën 'scroll-section'
+    const sections = document.querySelectorAll(".scroll-section");
+    
+    // Krijon një vëzhgues (Intersection Observer)
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            // Shton klasën 'visible' nëse seksioni është duke u shfaqur në ekran
+            if(entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { 
+        // Cakto pragun (threshold): 0.1 do të thotë që aktivizohet kur 10% e seksionit është i dukshëm
+        threshold: 0.1 
+    });
+
+    // Vëzhgo çdo seksion
+    sections.forEach(section => observer.observe(section));
+});
+</script>
+</body>
+</html>

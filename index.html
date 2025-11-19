@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veshjet Tradicionale Shqiptare</title>
+    <link rel="stylesheet" href="HomePage.css">
+</head>
+<body>
+
+<header>
+    <h1 class="titulli">Veshjet Tradicionale</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="krahinat.html">Gra</a>
+        <a href="krahinatBurra.html">Burra</a>
+        <a href="contact-about.html">Rreth nesh</a>
+    </nav>
+</header>
+
+<main>
+    <div class="photo scroll-section">
+        <img src="img/main1.png" alt="Foto kryesore">
+        <h2 id="okk">Veshjet Tradicionale Shqiptare</h2>
+        <p id="okk1">Zbuloni veshjet tradicionale të grave dhe burrave nga të gjitha krahinat.</p>
+    </div>
+
+    <section class="explore-section scroll-section">
+        <h2 class="section-title">Veshjet Tradicionale të Grave nga të gjitha Krahinat</h2>
+        <p class="section-description">
+            Eksploroni ngjyrat, qëndisjet dhe stilet unike që përfaqësojnë kulturën dhe historinë e grave shqiptare në çdo krahinë.
+        </p>
+
+        <div class="collection-grid">
+            <div class="photo-gallery">
+                <div class="gallery-item">
+                    <img src="img/VeshjaDiberGra.jpeg" alt="Traditional Item 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/VeshjaGjirokasterGra.jpeg" alt="Traditional Item 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/VeshjaBeratGra1.jpeg" alt="Traditional Item 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/VeshjaElbasanGra.png" alt="Traditional Item 4">
+                </div>
+            </div>
+
+            <div class="story-card">
+                <div class="story-content">
+                    <img src="img/VeshjaMirditesGra.jpeg" alt="Craftsman working" class="story-img">
+                    <div class="text-content">
+                        <h2>Eksploro Veshjet Tradicionale të Grave</h2>
+                        <p>
+                            Zbuloni koleksionet e veshjeve tradicionale të grave nga të gjitha krahinat e Shqipërisë.
+                        </p>
+                        <a href="krahinat.html" class="story-link">
+                            <button class="buton">Kliko këtu</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="explore-section scroll-section">
+        <h2 class="section-title">Veshjet Tradicionale të Burrave nga të gjitha Krahinat</h2>
+        <p class="section-description">
+            Zbuloni mjeshtërinë, karakterin dhe stilin unik të veshjeve tradicionale të burrave nëpër të gjitha zonat e Shqipërisë.
+        </p>
+
+        <div class="collection-grid">
+            <div class="photo-gallery">
+                <div class="gallery-item">
+                    <img src="img/hasBurra.jpeg" alt="Traditional Item 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/berat1.jpeg" alt="Traditional Item 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/struga1.jpeg" alt="Traditional Item 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/prizeren.jpeg" alt="Traditional Item 4">
+                </div>
+            </div>
+
+            <div class="story-card">
+                <div class="story-content">
+                    <img src="img/durrs3.jpeg" alt="Craftsman working" class="story-img">
+                    <div class="text-content">
+                        <h2>Eksploro Veshjet Tradicionale të Burrave</h2>
+                        <p>
+                            Shikoni koleksionet e veshjeve tradicionale të burrave nga të gjitha krahinat.
+                        </p>
+                        <a href="krahinatBurra.html" class="story-link">
+                            <button class="buton">Kliko këtu</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; 2025 Projekt. Të gjitha të drejtat e rezervuara.</p>
+</footer>
+
+<script>
+function scrollFadeIn() {
+    const sections = document.querySelectorAll('.scroll-section');
+    const triggerBottom = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < triggerBottom) {
+            section.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', scrollFadeIn);
+window.addEventListener('load', scrollFadeIn);
+</script>
+<style>
+    .scroll-section {
+    opacity: 0;                   /* fillimisht e padukshme */
+    transform: translateY(50px);  /* lëviz pak poshtë */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-section.visible {
+    opacity: 1;                   /* bëhet e dukshme */
+    transform: translateY(0);     /* kthehet në pozicionin normal */
+}
+</style>
+
+</body>
+</html>

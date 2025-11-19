@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krahinat e Veshjeve Tradicionale</title>
+    <link rel="stylesheet" href="Krahinat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<header>
+    <h1 class="titulli">Veshjet Tradicionale</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="krahinat.html">Gra</a>
+        <a href="krahinatBurra.html">Burra</a>
+        <a href="contact-about.html">Rreth nesh</a>
+    </nav>
+</header>
+
+<main>
+    <div class="faqe-hyrje">
+        <h2>Veshjet Tradicionale Shqiptare: Veshjet e Burrave </h2>
+        <hr class="ndares-titulli">
+    </div>
+
+    <section class="krahina-section scroll-section">
+        <div class="krahina-grid">
+
+            <a href="veriBurra.html" class="krahina-card">
+                <img src="img/ShqiperiaVeriu1.webp" alt="Veshje nga Malësia e Madhe" onerror="this.src='https://placehold.co/400x250/ef4444/ffffff?text=MALESIA+E+MADHE'">
+                <div class="card-content">
+                    <h3>Shqipëria Veriore</h3>
+                    <p>Përfshin veshjet e vendeve të: Dukagjinit, Mirditës, Lezhës, Dibrës</p>
+                    <span class="card-button">Shih Veshjet</span>
+                </div>
+            </a>
+
+            <a href="mesmeBurra.html" class="krahina-card">
+                <img src="img/shqiperimesme.jpeg" alt="Veshje nga Tirana" onerror="this.src='https://placehold.co/400x250/22c55e/ffffff?text=TIRANA+DHE+MESI'">
+                <div class="card-content">
+                    <h3>Shqipëria e Mesme </h3>
+                    <p>Përfshin veshjet e vendeve të: Tiranës, Elbasanit, Durrësit</p>
+                    <span class="card-button">Shih Veshjet</span>
+                </div>
+            </a>
+
+            <a href="juguBurra.html" class="krahina-card">
+                <img src="img/shqiperiaJug.jpeg" alt="Veshje nga Gjirokastra" onerror="this.src='https://placehold.co/400x250/3b82f6/ffffff?text=GJIROKASTRA'">
+                <div class="card-content">
+                    <h3>Shqipëria Jugore</h3>
+                    <p>Përfshin veshjet e vendeve të: Beratit, Gjirokastrës, Korçës</p>
+                    <span class="card-button">Shih Veshjet</span>
+                </div>
+            </a>
+            
+            <a href="kosovaBurra.html" class="krahina-card">
+                <img src="img/kosovo.jpeg" alt="Veshje nga Kosova Qendrore" onerror="this.src='https://placehold.co/400x250/f97316/ffffff?text=KOSOVA+QENDRORE'">
+                <div class="card-content">
+                    <h3>Kosova</h3>
+                    <p>Përfshin veshjet e vendeve të: Prizrenit, Rugovës, Hasit, Drenicës</p>
+                    <span class="card-button">Shih Veshjet</span>
+                </div>
+            </a>
+
+            <a href="maliZiBurra.html" class="krahina-card">
+                <img src="img/ulqin2.jpeg" alt="Veshje nga Korça" onerror="this.src='https://placehold.co/400x250/8b5cf6/ffffff?text=KORÇA'">
+                <div class="card-content">
+                    <h3>Mali i Zi</h3>
+                    <p>Përfshin veshjet e vendit të Ulqinit</p>
+                    <span class="card-button">Shih Veshjet</span>
+                </div>
+            </a>
+
+            <a href="maqedoniaBurra.html" class="krahina-card">
+                <img src="img/maqedoni.jpeg" alt="Veshje nga Shkodra" onerror="this.src='https://placehold.co/400x250/f43f5e/ffffff?text=SHKODRA'">
+                <div class="card-content">
+                    <h3>Maqedonia e Veriut</h3>
+                    <p>Përfshin veshjet e vendeve të: Tetovës, Strugës</p>
+                    <span class="card-button">Shih Veshjet</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p>&copy; 2025 Projekt. Të gjitha të drejtat e rezervuara.</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Zgjedh të gjitha seksionet me klasën 'scroll-section'
+    const sections = document.querySelectorAll(".scroll-section");
+    
+    // Krijon një vëzhgues (Intersection Observer)
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            // Shton klasën 'visible' nëse seksioni është duke u shfaqur në ekran
+            if(entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { 
+        // Cakto pragun (threshold): 0.1 do të thotë që aktivizohet kur 10% e seksionit është i dukshëm
+        threshold: 0.1 
+    });
+
+    // Vëzhgo çdo seksion
+    sections.forEach(section => observer.observe(section));
+});
+</script>
+
+</body>
+</html>

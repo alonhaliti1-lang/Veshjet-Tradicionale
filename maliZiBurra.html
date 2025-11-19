@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veshja e Krahinës - Malësia e Madhe</title>
+    
+    <link rel="stylesheet" href="HomePage.css"> 
+    <link rel="stylesheet" href="DizajnInformata.css">
+</head>
+<body>
+    
+<header>
+    <h1 class="titulli">Veshjet Tradicionale</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="krahinat.html">Gra</a>
+        <a href="krahinatBurra.html">Burra</a>
+        <a href="contact-about.html">Rreth nesh</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="info-section scroll-section">
+    <div class="info-grid">
+        
+        <div class="info-foto">
+            <img src="img/uqlin1.jpeg" alt="Veshja tradicionale e Burrave të Ulqinit">
+        </div>
+        
+        <div class="info-tekst">
+            
+            <h2>Veshja Tradicionale e Burrave të Ulqinit</h2>
+            
+            <p>Veshja e burrave të Ulqinit reflekton jetën bregdetare dhe ndikimet urbane. Kostumi dallon për karakterin e tij <strong>të lehtë dhe elegant</strong>, duke pasqyruar ndarjen mes stilit malor të brendshëm dhe stilit <strong>qytetar portual</strong>.</p>
+            
+            <p>Stili Bregdetar/Portual shquhet për të qenë i lehtë, funksional dhe elegant, i përshtatur për klimën e ngrohtë dhe aktivitetet tregtare. </p>
+
+            <h3>Karakteristikat Kryesore</h3>
+            
+            <ul>
+                <li><strong>Stili Portual:</strong> Kostumi i lehtë dhe funksional, i përshtatur për klimën bregdetare.</li>
+                <li><strong>Diferencimi Fshat-Qytet:</strong> Përdorimi i <strong>potureve të errëta</strong> (qytet) dhe i tirqve të bardhë (fshat).</li>
+                <li><strong>Ngjyrat:</strong> Kontrasti i bardhë (këmisha/tirqet) dhe i zi/errët (poturet/jeleku).</li>
+                <li><strong>Plisi:</strong> Shpesh më i lehtë dhe i thjeshtë.</li>
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<section class="detaje-section scroll-section">
+    <div class="detaje-container">
+        
+        <h2>Elementet Kryesore dhe Variacionet Stilistike</h2>
+        
+        <h3>Elementet Themelore</h3>
+        
+        <ul>
+            <li><strong>Këmisha:</strong> E bardhë ose ngjyrë e hapur, prej pambuku ose liri. Mëngët e gjera.</li>
+            <li><strong>Jeleku dhe Xhamadani:</strong> Jelek i zi ose i errët, me prerje elegante dhe <strong>qëndisma diskrete</strong>. Xhamadani (i errët) përdoret në raste solemne, me stil të matur dhe urban.</li>
+            <li><strong>Brezi:</strong> I mesëm ose i ngushtë, zakonisht i kuq, i zi ose me shirita, i lidhur rreth belit.</li>
+        </ul>
+        
+        <h3>Pantallonat Tradicionale (Variacioni)</h3>
+        
+        <p>Visheshin dy variante kryesore, në varësi të zonës:</p>
+        
+        <div class="ngjyrat-lista">
+            <span><strong>Tirqet:</strong> Të bardha ose ngjyrë natyrale, me dekor minimal. Veshja e zonave <strong>fshatare dhe malore</strong>.</span><br>
+            <span><strong>Poturet (Dimijat):</strong> Pantallona të gjata, të gjera dhe me pala. Kjo ishte veshja tipike e burrave të <strong>Ulqinit qytetar dhe tregtar</strong>, shpesh të punuara me shajak të zi ose blu të errët.</span>
+        </div>
+
+        <h3>Aksesorët dhe Këpucët</h3>
+        
+        <ul>
+            <li><strong>Plisi (Qeleshi):</strong> Plisi i bardhë, <strong>më i lehtë dhe i thjeshtë</strong>, ose lloje të tjera kapelash të lehta.</li>
+            <li><strong>Opingat dhe Këpucët:</strong> Opingat prej lëkure. Në qytet shpesh përdorej <strong>këpucë lëkure me stil urban</strong>.</li>
+        </ul>
+
+    </div>
+</section>
+
+<footer class="site-footer">
+    <p>&copy; 2025 Projekt. Të gjitha të drejtat e rezervuara.</p>
+</footer>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Zgjedh të gjitha seksionet me klasën 'scroll-section'
+    const sections = document.querySelectorAll(".scroll-section");
+    
+    // Krijon një vëzhgues (Observer)
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            // Shton klasën 'visible' nëse seksioni është duke u shfaqur
+            if(entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { 
+        // Cakto pragun (threshold): 0.1 do të thotë që aktivizohet kur 10% e seksionit është i dukshëm
+        threshold: 0.1 
+    });
+
+    // Vëzhgo çdo seksion
+    sections.forEach(section => observer.observe(section));
+});
+</script>
+
+</body>
+</html>

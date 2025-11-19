@@ -1,0 +1,329 @@
+/* Stilet BAZË dhe Variablat */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* E lëmë këtë rregull bazë siç e keni pasur */
+    background-color: #fdfaf6; 
+}
+
+/* Krijimi i Variablave të Ngjyrave për Përdorim të Lehtë */
+:root {
+    --color-primary: #cc3b3b; /* E kuqja kryesore */
+    --color-secondary: #f2c94c; /* E verdha/ari */
+    --color-text: #222; /* Teksti i zi/errët */
+    --color-accent: #b85c38; /* Ngjyra theksuese për About/Contact (kafja) */
+}
+
+
+/* =============== */
+/*   SCROLL EFFECT */
+/* =============== */
+
+.scroll-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+/* --- HEADER DHE NAVIGACIONI --- */
+header {
+    background-color: var(--color-primary); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.titulli {
+    font-size: 3rem;
+    color: #ffffff;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: 1px;
+    background: transparent;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    background: none;
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff9f3;
+    font-weight: 500;
+    padding: 10px 18px;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    background: none;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #f5e5b8;
+    color: #a82f2f;
+    box-shadow: 0px 3px 10px rgba(168, 47, 47, 0.25);
+}
+
+/* Stil bazë për faqen hyrëse */
+.faqe-hyrje {
+    padding: 40px 5%;
+    text-align: center;
+}
+.faqe-hyrje h2 {
+    color: var(--color-primary);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.ndares-titulli {
+    width: 100px;
+    height: 3px;
+    background-color: var(--color-secondary);
+    border: none;
+    margin: 0 auto;
+}
+
+/* STILIZIM PËR SEKSCIONIN "RRETH NESH" */
+#about-us {
+    background-color: #fdfaf6; /* Sfondi i Uniformizuar */
+    padding: 5rem 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+#about-us h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--color-accent);
+}
+
+/* Kutia brenda seksionit (.bo) */
+.bo {
+    position: relative;
+    width: 65%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 5rem;
+    background-color: #fff;
+    box-shadow: 0rem 8px 20px rgba(0,0,0,0.1);
+    
+    /* NDRYSHIMI KRYESOR: BORDER I HEQUR */
+    border-left: none; 
+    border-right: none;
+    border-radius: 10px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Heqim elementet dekorative të bordurës anësore */
+.bo::before,
+.bo::after {
+    content: none; 
+}
+
+/* Efekti kur kalon miun */
+.bo:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 1rem 50px 30px rgba(0,0,0,0.2);
+}
+
+/* Paragrafët */
+.bo p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+/* Seksioni i kontaktit */
+#contact-us {
+    background-color: #fdfaf6; /* Sfondi i Uniformizuar */
+    padding: 5rem 1rem 10rem 1rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-us h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-accent);
+}
+
+/* Kutia e kontaktit me hover animation */
+.contact-box {
+    width: 100%;
+    max-width: 700px;
+    background-color: white;
+    padding: 2.5rem 3rem;
+    /* RUAN BORDURËN ORIGJINALE */
+    border: 3px solid var(--color-accent); 
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover efekti: ngrihet lart dhe hije më e thellë */
+.contact-box:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 1rem 50px 30px rgba(0,0,0,0.2);
+}
+
+/* Paragrafi */
+.contact-box p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+/* Form */
+.contact-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Label */
+.contact-box label {
+    font-size: 1.6rem;
+    display: block; 
+}
+
+/* Input dhe textarea */
+.contact-box input,
+.contact-box textarea {
+    font-size: 1.6rem;
+    padding: 1rem;
+    border: 2px solid var(--color-accent); /* E bëjmë konsistente me variablën */
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Kur fokusohet */
+.contact-box input:focus,
+.contact-box textarea:focus {
+    border: 2px solid var(--color-primary); /* Theksi i kuq kur fokusohet */
+    outline: none;
+    box-shadow: 0 0 5px rgba(204, 59, 59, 0.5);
+}
+
+/* Textarea */
+.contact-box textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Butoni */
+.contact-box button {
+    width: 180px;
+    height: 50px;
+    font-size: 1.6rem;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    align-self: flex-start;
+}
+
+.contact-box button:hover {
+    background-color: #933d21;
+}
+
+/* --- RESPONSIVENESS (PËRMIRËSUAR) --- */
+
+/* Tableta dhe desktop të vogla (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    header { padding: 10px 20px; }
+    .titulli { font-size: 2.5rem; }
+    nav { gap: 15px; }
+
+    #about-us { padding: 4rem 0; }
+    #about-us h1 { font-size: 3.5rem; margin-bottom: 3rem; }
+    .bo { width: 80%; padding: 2.5rem 3rem; }
+    .bo p { font-size: 1.5rem; line-height: 2rem; }
+
+    #contact-us h1 { font-size: 3rem; margin-bottom: 2.5rem; }
+    .contact-box { max-width: 600px; padding: 2rem; }
+}
+
+/* Tableta vertikale dhe Telefona të mëdhenj (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    header { flex-direction: column; padding: 15px; }
+    nav { margin-top: 10px; gap: 10px; flex-wrap: wrap; }
+    .titulli { font-size: 2rem; }
+    nav a { font-size: 16px; padding: 8px 12px; }
+
+    #about-us h1 { font-size: 2.8rem; margin-bottom: 2rem; }
+    .bo { 
+        width: 90%; 
+        padding: 2rem; 
+        box-shadow: 0rem 5px 15px rgba(0,0,0,0.1); 
+    }
+    .bo p { font-size: 1.2rem; line-height: 1.8rem; margin-bottom: 1.5rem; }
+    
+    #contact-us h1 { font-size: 2.5rem; }
+    .contact-box { padding: 1.5rem; }
+    .contact-box p { font-size: 1.4rem; }
+    .contact-box label, .contact-box input, .contact-box textarea, .contact-box button { font-size: 1.4rem; }
+    .contact-box button { width: 100%; align-self: center; } 
+}
+
+/* Telefona (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    header { padding: 10px; }
+    nav { justify-content: space-around; }
+    .titulli { font-size: 1.8rem; }
+    nav a { font-size: 14px; padding: 6px 10px; }
+    
+    #about-us { padding: 3rem 0; }
+    #about-us h1 { font-size: 2.2rem; }
+    .bo { width: 95%; padding: 1.5rem; }
+    .bo p { font-size: 1rem; line-height: 1.6rem; }
+
+    #contact-us h1 { font-size: 2rem; }
+    .contact-box { padding: 1rem; }
+    .contact-box p { font-size: 1.2rem; }
+    .contact-box form { gap: 1rem; }
+    .contact-box label, .contact-box input, .contact-box textarea, .contact-box button { font-size: 1.2rem; }
+}
+
+/* Telefona shumë të vegjël (max-width: 320px) */
+@media screen and (max-width: 320px) {
+    .titulli { font-size: 1.6rem; }
+    nav a { font-size: 12px; padding: 4px 6px; }
+    .bo { padding: 1rem; }
+    .bo p { font-size: 0.9rem; }
+    #contact-us h1 { font-size: 1.8rem; }
+}

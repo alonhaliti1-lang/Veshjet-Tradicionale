@@ -1,0 +1,249 @@
+/* Stilet BAZË për përmbajtjen (ndryshe nga HomePage) */
+body, main {
+    background-color: #ffffff; /* Sfond i bardhë për lexim të lehtë */
+}
+* {
+    background-color: transparent; /* Reseto sfondin për elementet fëmijë */
+}
+
+/* Variablat e ngjyrave (mund t'i kopjoni nga CSS kryesor) */
+:root {
+    --color-primary: #cc3b3b; 
+    --color-secondary: #f2c94c;
+    --color-text: #333; 
+}
+
+/* --- 1. Rregullim i Imazheve (Placeholder i Brendshëm) --- */
+/* Ky rregull siguron që imazhi të shfaqet si kuti e zbrazët nëse nuk gjendet */
+
+
+.scroll-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- 3. Seksioni i Informacionit (2 Kolona) --- */
+
+.info-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 5%;
+}
+.info-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px;
+}
+.info-foto {
+    flex: 1; 
+    min-width: 300px;
+}
+.info-foto img {
+    width: 100%;
+    height: 600px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+.info-tekst {
+    flex: 1.2; 
+    min-width: 300px;
+}
+.info-tekst h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--color-secondary);
+    padding-bottom: 10px;
+}
+.info-tekst p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+.info-tekst h3 {
+    font-size: 1.5rem;
+    color: #222;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.info-tekst ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+/* Madhësia e shkronjave e rritur për listat kryesore në info-tekst */
+.info-tekst li {
+    font-size: 1.15rem; 
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+/* --- 4. Seksioni i Detajeve (Tekst i Gjatë) --- */
+.detaje-section {
+    background-color: #fdfaf6; 
+    padding: 60px 5%;
+}
+
+.detaje-container {
+    max-width: 900px; 
+    margin: 0 auto;
+}
+
+.detaje-container h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.detaje-container h3 {
+    font-size: 1.6rem;
+    color: #222;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.detaje-container p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.8; 
+    margin-bottom: 20px;
+}
+/* Madhësia e shkronjave e rritur për listat kryesore në detaje-container */
+.detaje-container li {
+    font-size: 1.15rem; 
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.detaje-container ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+/* Stilimi i rreshtave të ngjyrave (për të hequr hapësirat e panevojshme dhe ruajtur madhësinë e shkronjave) */
+.detaje-container .ngjyrat-lista {
+    margin-left: 20px; 
+}
+.detaje-container .ngjyrat-lista span {
+    display: block; /* E bëjmë block për të siguruar që zë të gjithë rreshtin */
+    font-size: 1.1rem; /* I japim madhësinë standarde të paragrafit */
+    color: #444; 
+    line-height: 1.6; 
+    margin-bottom: 2px; /* Margjinë shumë e vogël për të ndarë rreshtat */
+}
+
+
+/* --- 5. Seksioni i Fakteve Interesante (Kutitë Info) --- */
+.fakte-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 5%;
+}
+
+.fakte-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.fakte-card {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-left: 5px solid var(--color-secondary); 
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.fakte-card h4 {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.fakte-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+/* --- 6. MEDIA QUERIES (Për Responsivitet) --- */
+
+/* Për Tabletë (Max 768px) - Kjo zgjidh problemin e mbikalimit në ekran të ngushtë */
+@media (max-width: 768px) {
+    .faqe-banner {
+        height: 300px;
+    }
+    .faqe-banner h1 {
+        font-size: 2.8rem;
+    }
+    
+    /* ZGJIDHJA E MBIKALIMIT: Detyrojmë formatin me një kolonë (foto pastaj tekst) */
+    .info-grid {
+        flex-direction: column;
+    }
+    
+    /* Sigurohemi qe elementet zene gjerësinë e plotë në formatin kolonë */
+    .info-foto, .info-tekst {
+        min-width: 100%; /* Siguron që zë të gjithë gjerësinë */
+        flex: none; /* Anulon rregullin flex */
+    }
+
+    .info-tekst h2, .detaje-container h2 {
+        font-size: 2.2rem;
+    }
+    /* Shtojmë një margin poshtë imazhit për të mos u ngjitur me tekstin */
+    .info-foto {
+        margin-bottom: 20px;
+    }
+}
+
+/* Për Celularë (Max 480px) */
+@media (max-width: 480px) {
+    .faqe-banner {
+        height: 250px;
+    }
+    .faqe-banner h1 {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0 10px;
+    }
+    .info-section, .fakte-section {
+        margin-top: 40px;
+    }
+    /* Rregullimi i padding-ut për të shmangur daljen e përmbajtjes jashtë ekranit */
+    .info-section, .detaje-section {
+        padding: 0 20px; 
+    }
+
+    .info-tekst h2, .detaje-container h2 {
+        font-size: 1.8rem;
+    }
+    .info-tekst p, .fakte-card p, .detaje-container p {
+        font-size: 1rem;
+    }
+    /* Madhësia e listës për celularë */
+    .info-tekst li, .detaje-container li {
+         font-size: 1.05rem; 
+    }
+    .detaje-container h3 {
+        font-size: 1.4rem;
+    }
+}
