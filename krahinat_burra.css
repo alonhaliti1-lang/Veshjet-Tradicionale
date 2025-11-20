@@ -1,0 +1,292 @@
+/* Stilet BAZË dhe Variablat */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #fdfaf6; /* bezhë shumë e lehtë */
+}
+
+/* Këtu duhet të shtoni variablat e ngjyrave që i keni përdorur, p.sh.: */
+:root {
+    --color-primary: #cc3b3b; /* E kuqja kryesore */
+    --color-secondary: #f2c94c; /* E verdha (për butona) */
+    --color-text: #222; /* Teksti i zi/errët */
+}
+
+
+/* --- HEADER DHE NAVIGACIONI (I KOPJUAR NGA FAQJA E PARË) --- */
+header {
+    background-color: var(--color-primary); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* *** RREGULLIMI KRYESOR: BËHET SPECIFIKE PËR TË FORCUAR NDRYSHIMIN *** */
+header .titulli {
+    font-size: 3rem;
+    color: #ffffff;
+    
+    /* ZGJIDHJA 1: Përdor 'Arial' për t'u përputhur me nav linkun */
+    font-family: 'Arial', sans-serif;
+    
+    /* ZGJIDHJA 2: Heqim letter-spacing */
+    letter-spacing: normal; 
+    
+    /* ZGJIDHJA 3: Përdorim të njëjtën trashësi font-i si linku i navigacionit (500) */
+    font-weight: 500; 
+    
+    background: transparent;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    background: none;
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff9f3;
+    font-weight: 500;
+    font-family: 'Arial', sans-serif; /* Linku i navigacionit: Arial, weight 500 */
+    padding: 10px 18px;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    background: none;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #f5e5b8;
+    color: #a82f2f;
+    box-shadow: 0px 3px 10px rgba(168, 47, 47, 0.25);
+}
+
+
+
+/* --- GRID I KRAHINAVE (Pjesa kryesore e faqes) --- */
+.krahina-section {
+    padding-top: 50px;
+}
+
+.krahina-grid {
+    display: grid;
+    /* Default: 1 kolonë në mobile (OK, e ruajmë këtë) */
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    padding: 30px 5%;
+    max-width: 2200px;
+    margin: 0 auto;
+}
+
+/* KARTA E KRAHINËS */
+.krahina-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+.krahina-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.krahina-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.krahina-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-content h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-primary); /* Përdorim Variablin */
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-secondary); /* Përdorim Variablin */
+    color: var(--color-text); /* Përdorim Variablin */
+    font-weight: 700;
+    border-radius: 6px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+.card-button:hover {
+    background-color: #f59e0b;
+}
+
+/* --- FOOTER --- */
+.site-footer {
+    background-color: #222; 
+    color: #f1efe8;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    width: 100%;
+    border-top: 1px solid #444;
+}
+.site-footer p {
+    background-color: transparent; 
+    color: #f1efe8; 
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* --- MEDIA QUERIES TË RREGULLUARA --- */
+
+/* 1. Rregullimi i Krahina-Grid për Tablet (640px) */
+@media (min-width: 640px) {
+    .krahina-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolona */
+    }
+}
+/* 2. Rregullimi i Krahina-Grid për Desktop (1024px) */
+@media (min-width: 1024px) {
+    .krahina-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 kolona */
+    }
+}
+
+/* 3. MEDIA QUERY PËR TABLET DHE EKRANE TË MESME (Max Width 900px) */
+@media (max-width: 900px) {
+    /* HEADER: Zvogëlo padding dhe shkronjat */
+    header {
+        padding: 15px 20px;
+    }
+
+    /* FORCOJMË RREGULLIMIN EDHE BRENDA MEDIA QUERY */
+    header .titulli {
+        font-size: 2.2rem;
+        font-weight: 500; /* Përsëritet për të siguruar trashësinë e duhur */
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 15px;
+        padding: 8px 12px;
+    }
+
+    /* Krahina Cards: Sigurohu që teksti të jetë i lexueshëm */
+    .krahina-card img {
+        height: 200px; /* Zvogëlo pak lartësinë e fotos */
+    }
+    .card-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* 4. MEDIA QUERY PËR EKRANE MOBILE (Max Width 640px) */
+@media (max-width: 640px) {
+    
+    /* HEADER: Kalon në format kolonë */
+    header {
+        flex-direction: column; 
+        padding: 15px 10px;
+        position: static; /* E bëj statik për mobile */
+    }
+
+    header .titulli {
+        margin-bottom: 10px;
+    }
+
+    nav {
+        margin-top: 5px;
+        gap: 5px;
+        flex-wrap: wrap; /* Lejon lidhjet të kalojnë në rresht të ri */
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+
+    /* HERO SECTION: Zvogëlo lartësinë dhe shkronjat */
+    .photo {
+        height: 300px;
+    }
+    
+    #okk {
+        font-size: 1.8rem;
+        top: 35%;
+    }
+
+    #okk1 {
+        font-size: 1rem;
+        top: 55%;
+        padding: 0 10px; /* Për të mos dalë jashtë kornizës */
+    }
+    
+    /* Krahina Cards: Kartat tashmë janë 1 kolonë (falë kodit tuaj) */
+    .krahina-grid {
+        gap: 20px;
+        padding: 20px 3%;
+    }
+
+    .card-content h3 {
+        font-size: 1.4rem;
+    }
+}
+
+
+@media (max-width: 640px) {
+    /* ... stilet e headerit ... */
+
+    /* HERO SECTION: Fshirë/Zëvendësuar */
+    .faqe-hyrje {
+        padding: 40px 5% 20px;
+    }
+    .faqe-hyrje h2 {
+        font-size: 1.8rem;
+    }
+    .ndares-titulli {
+        width: 100px;
+    }
+    /* ... stilet e krahina-grid ... */
+}
